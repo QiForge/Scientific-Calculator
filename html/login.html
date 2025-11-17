@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Personal Health Assistant Chatbot</title>
+    <link rel="stylesheet" href="css/loginpage.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Left Side - Info Panel -->
+        <div class="info-panel">
+            <div class="info-content">
+                <h1>Health Assistant</h1>
+                <p class="tagline">Your Personal Health Companion</p>
+                <div class="features">
+                    <div class="feature">
+                        <span class="icon">🎯</span>
+                        <p>Personalized Health Plans</p>
+                    </div>
+                    <div class="feature">
+                        <span class="icon">🍎</span>
+                        <p>Nutrition Recommendations</p>
+                    </div>
+                    <div class="feature">
+                        <span class="icon">💪</span>
+                        <p>Fitness Guidance</p>
+                    </div>
+                    <div class="feature">
+                        <span class="icon">😴</span>
+                        <p>Sleep Management</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Login/Signup Form -->
+        <div class="form-panel">
+            <!-- Login Form -->
+            <div id="loginSection" class="auth-section active">
+                <div class="form-container">
+                    <h2>Welcome Back</h2>
+                    <p class="form-subtitle">Sign in to your account</p>
+                    
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="loginEmail" 
+                                placeholder="Enter your email" 
+                                required
+                            >
+                            <span class="error-message" id="loginEmailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <div class="password-input-group">
+                                <input 
+                                    type="password" 
+                                    id="loginPassword" 
+                                    placeholder="Enter your password" 
+                                    required
+                                >
+                                <button type="button" class="toggle-password" onclick="togglePasswordVisibility('loginPassword')">
+                                    👁️
+                                </button>
+                            </div>
+                            <span class="error-message" id="loginPasswordError"></span>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="rememberMe">
+                                Remember me
+                            </label>
+                            <a href="#" class="forgot-password">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-login">Sign In</button>
+                    </form>
+
+                    <div class="divider">
+                        <span>OR</span>
+                    </div>
+
+                    <button type="button" class="btn btn-social google-btn">
+                        <span>🔍</span> Continue with Google
+                    </button>
+
+                    <p class="auth-toggle">
+                        Don't have an account? 
+                        <a href="#" onclick="switchAuthMode()">Sign Up</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signupSection" class="auth-section">
+                <div class="form-container">
+                    <h2>Create Account</h2>
+                    <p class="form-subtitle">Join our health community</p>
+                    
+                    <form id="signupForm">
+                        <div class="form-group">
+                            <label for="signupName">Full Name</label>
+                            <input 
+                                type="text" 
+                                id="signupName" 
+                                placeholder="Enter your full name" 
+                                required
+                            >
+                            <span class="error-message" id="signupNameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signupEmail">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="signupEmail" 
+                                placeholder="Enter your email" 
+                                required
+                            >
+                            <span class="error-message" id="signupEmailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signupPassword">Password</label>
+                            <div class="password-input-group">
+                                <input 
+                                    type="password" 
+                                    id="signupPassword" 
+                                    placeholder="Create a password" 
+                                    required
+                                >
+                                <button type="button" class="toggle-password" onclick="togglePasswordVisibility('signupPassword')">
+                                    👁️
+                                </button>
+                            </div>
+                            <div class="password-strength">
+                                <div class="strength-bar" id="strengthBar"></div>
+                            </div>
+                            <span class="error-message" id="signupPasswordError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signupConfirmPassword">Confirm Password</label>
+                            <div class="password-input-group">
+                                <input 
+                                    type="password" 
+                                    id="signupConfirmPassword" 
+                                    placeholder="Confirm password" 
+                                    required
+                                >
+                                <button type="button" class="toggle-password" onclick="togglePasswordVisibility('signupConfirmPassword')">
+                                    👁️
+                                </button>
+                            </div>
+                            <span class="error-message" id="signupConfirmPasswordError"></span>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeTerms" required>
+                                I agree to the Terms & Conditions
+                            </label>
+                            <span class="error-message" id="agreeTermsError"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-signup">Create Account</button>
+                    </form>
+
+                    <p class="auth-toggle">
+                        Already have an account? 
+                        <a href="#" onclick="switchAuthMode()">Sign In</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>
